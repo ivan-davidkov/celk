@@ -66,6 +66,17 @@ services:
     depends_on:
       - elasticsearch
 
+  cerebro:
+    build:
+      context: cerebro/
+    ports:
+      - "9000:9000"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+
 networks:
   elk:
     driver: bridge
